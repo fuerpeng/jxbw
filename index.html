@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金星娱乐</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<div class="container-fluid nav-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="./img/logo.png" alt="" style="" class="animated wow pulse" data-wow-delay="700ms">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav" style="margin: 0 auto">
+                <li class="nav-item">
+                <a class="nav-link active" href="index.html">金星首页</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="advantage.html">金星优势</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="gameType.html">游戏品种</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="services.html">服务方案</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="cases.html">成功案例</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cooperation.html">联系我们</a>
+                </li>
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">-->
+                <!--<input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入关键字后回车">-->
+            <!--</form>-->
+        </div>
+    </nav>
+</div>
+<div id="carouselExampleControls" class="carousel slide" >
+    <div class="carousel-inner">
+        <div class="carousel-item " v-for="(item,index) in bannerList" :class="index==0 ? 'active':''">
+            <img class="d-block w-100" :src="item.bannerImgPathCn">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center banner-bottom-left animated wow bounceInLeft" style="margin-top: 30px">
+        <div class="col-md-12">
+            <h1 class="ad-title">金星优势</h1>
+        </div>
+        <div class="col-md-6" style="text-align: center;color: #8a8888;">
+            金星是真正能站在您与玩家的角度考虑的平台商，想您所想、急您所急如果您希望在产品上面有何特色，请及时告知我们！
+        </div>
+    </div>
+    <div class="row index-ad" style="margin-top: 20px">
+        <div class="col-md-4 fadeInDown animated wow"  data-wow-delay="300ms">
+            <div>
+                <span>包网条件优越，客户轻松上阵</span>
+            </div>
+            <div>
+                自营BG真人视讯、BG彩票平台、自主研发BG捕鱼大师与其他众多电子游艺等项目。彩票免抽，为客户创造更多利润。
+            </div>
+        </div>
+        <div class="col-md-4 fadeInDown animated wow"  data-wow-delay="600ms">
+            <div>
+                <span>24 x 365专业运维</span>
+            </div>
+            <div>
+                我们的运维团队365天24小时为客户保驾护航，即时响应、即时处理，上线培训、疑问解答、攻击防御、一一俱全。
+            </div>
+        </div>
+        <div class="col-md-4 fadeInDown animated wow" data-wow-delay="900ms">
+            <div>
+                <span>安全无忧</span>
+            </div>
+            <div>
+                强大的技术、运维团队随时为您服务，东南亚最先进、首座Tier III国际权威认证的云端机房，保证系统最佳运行状态。
+            </div>
+        </div>
+    </div>
+    <div class="row "  style="margin-top: 30px">
+        <div class="col-md-12 justify-content-md-center animated wow pulse" data-wow-delay="700ms" style="margin-bottom: 20px">
+            <h1 class="ad-title" >超值包网</h1>
+        </div>
+        <div class="col-md-3 col-6 bw-item fadeInUp animated wow" data-wow-delay="400ms">
+            <div>
+                <div>皇冠体育系统</div>
+                <hr>
+                <div>免抽成体育系统助力您爆发于2018年世界杯</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 bw-item fadeInUp animated wow" data-wow-delay="700ms">
+            <div>
+                <div>超低彩票抽成</div>
+                <hr>
+                <div>自定义赔率设置平台佣金业界最低</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 bw-item fadeInUp animated wow" data-wow-delay="1000ms">
+            <div>
+                <div>智能优惠活动</div>
+                <hr>
+                <div>一键批量审核，自动派彩活动发布简单高效</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 bw-item fadeInUp animated wow" data-wow-delay="1300ms">
+            <div>
+                <div>最齐全手机版</div>
+                <hr>
+                <div>手机H5、安卓APP、苹果APP全平台游戏手机与PC版同步</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-right: 15px;padding-left: 15px">
+    <div class="row justify-content-md-center banner-bottom-left animated wow bounceInDown" data-wow-delay="700ms" style="margin-top: 30px">
+        <div class="col-md-12" style="margin-bottom: 40px">
+            <h1 class="ad-title">开版流程</h1>
+        </div>
+        <div class="col-md-4" style="z-index: 1000">
+            <img src='img/computer.png' alt="" class="dask-computer">
+        </div>
+        <div class="col-md-4 process">
+            <h3>包网开站只要3秒钟，您还在等什么？</h3>
+            <ul class="">
+                <li>01  选定模版 <i class="icon iconfont" style="margin-right: 5px;">&#xe61c;</i></li>
+                <li>02  上传文案 / LOGO / 轮播档 <i class="icon iconfont">&#xe61d;</i></li>
+                <li>03  发布网站 <i class="icon iconfont">&#xe61e;</i></li>
+            </ul>
+        </div>
+        <div class="col-md-12 all-service banner-bottom-left animated wow bounceInUp" data-wow-delay="700ms">
+            <h1 class="ad-title">全方位服务</h1>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            <div>01 专业团队</div>
+                            <div>亚洲一流的博彩团队，金星顶级的团队阵容将是您坚强的后盾；</div>
+                        </li>
+                        <li>
+                            <div>02 产品多样</div>
+                            <div>金星多年来不断的整合市场上博彩游戏，为游戏供货商整合标准接口的同时，更为您站点上的玩家提供更多产品选择；</div>
+                        </li>
+                        <li>
+                            <div>03 持续创新</div>
+                            <div>金星产品需求团队全天候不断探索市场发展方向；智能优惠活动、DIY竞猜活动、均为行业首创；</div>
+                        </li>
+                        <li>
+                            <div>04 贴心服务</div>
+                            <div>金星将为您配置一对一的VIP商务经理，随时聆听您的意见，您所想要的，将会是宏图努力的方向；</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer row" style="">
+        <div class="col" style="padding: 0">
+            <span style="margin-right: 1%"><i class="icon iconfont">&#xe60d;</i> CONTACT US | 联系我们</span>
+            <div class="details">
+                与合作伙伴共同创造最大价值是金星娱乐不懈努力的目标，
+                金星与知名品牌合作,金星亦乐于携手新兴品牌共同发展。
+                期待与您共创未来！
+            </div>
+            <div style="display: inline-block;margin-right: 1%"><i class="icon iconfont">&#xe609;</i> COOPERATIVE PARTNER | 合作伙伴 <img src="img/partner-img.png" alt=""></div>
+            <span style="font-size: 12px;">COPYRIGHT © 2017 HONGTU GAME ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jqery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<!-- 生产环境版本，优化了尺寸和速度 -->
+
+<script src="js/index.js"></script>
+<script>
+    console.log(url)
+    var app = new Vue({
+        el: '#app',
+        data: {
+            bannerList: [],
+        },
+        methods:{
+            getBanner:function() {
+                var that = this
+                $.ajax({
+                    type: "POST",
+                    url:url+'web/banner/findAllBannerInfo',
+                    data:JSON.stringify({
+                        uri:"/web/banner/findAllBannerInfo",
+                        token:"",
+                        paramData:{}
+                    }),
+                    contentType:'false',
+                    success:function(data){
+
+                       if(data.currentStatus == 0) {
+                           that.bannerList = data.currentData.data;
+                           console.log(that.bannerList)
+                           console.log($('.carousel').carousel())
+                           $('.carousel').carousel()
+                       }
+
+                    }
+                })
+            }
+        },
+        created:function(){
+            this.getBanner()
+        }
+    })
+
+</script>
+</body>
+</html>

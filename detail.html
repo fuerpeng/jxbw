@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金星娱乐</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="./img/logo.png" alt="" class="animated wow pulse" data-wow-delay="700ms">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav" style="margin: 0 auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">金星首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="advantage.html">金星优势</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gameType.html">游戏品种</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">服务方案</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="cases.html">成功案例</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cooperation.html">联系我们</a>
+                </li>
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">-->
+                <!--<input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入关键字后回车">-->
+            <!--</form>-->
+        </div>
+    </nav>
+</div>
+<div class="container" style="text-align: center;position: relative">
+    <div style="position: absolute;right: 0;" class="title_num">
+        <div style="">{{name}}</div>
+        <a v-if="imgJson[0].liveDemoURL" :href="imgJson[0].liveDemoURL" target="_blank" style="">LIVE DOME</a>
+    </div>
+    <img v-if="imgJson && imgJson.length!=0" :src="imgJson[0].styleImgPath" alt="" style="width: 80%;margin-top: 60px">
+    <div style="text-align: center;margin-top: 40px;margin-bottom: 20px" class="pc-show">
+        <button type="button" class="btn btn-outline-secondary pc_btn active"><i class="icon iconfont">&#xe608;</i> PC端预览</button>
+        <button type="button" class="btn btn-outline-secondary mobile_btn"><i class="icon iconfont">&#xe60b;</i> 手机端预览</button>
+    </div>
+    <div style="text-align: center;margin-top: 40px;margin-bottom: 20px" class="mobile-show">
+        <button type="button" class="btn btn-outline-secondary pc_btnInMobile active"><i class="icon iconfont">&#xe608;</i> PC端预览</button>
+        <button type="button" class="btn btn-outline-secondary mobile_btnInMobile"><i class="icon iconfont">&#xe60b;</i> 手机端预览</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <!--pc显示的轮播-->
+    <div class="pc-show">
+        <!-- Swiper -->
+        <div class="swiper-container pc-swiper" v-if="imgJson && imgJson.length!=0">
+            <div class="swiper-wrapper">
+
+                <div  v-for="(key, value) in imgJson[0].detailImgPath" class="swiper-slide" :style="'background:url('+key+') no-repeat center/100% 100%'"></div>
+                <!--<div class="swiper-slide" style="background:url('img/swiper-pc-icon.png') no-repeat center/100% 100%"></div>-->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Swiper mobile-->
+        <div class="swiper-container mobile-swiper" style="display: none" v-if="imgJson && imgJson.length!=0">
+            <div class="swiper-wrapper">
+                <div  v-for="(key, value) in imgJson[0].detailPhoneImgPath" class="swiper-slide" :style="'background:url('+key+') no-repeat center/100% 100%'"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!--手机上显示的轮播-->
+    <div class="mobile-show">
+        <div class="swiper-container pc-swiperInMobile"  v-if="imgJson && imgJson.length!=0">
+            <div class="swiper-wrapper">
+                <div  v-for="(key, value) in imgJson[0].detailImgPath" class="swiper-slide" :style="'background:url('+key+') no-repeat center/100% 100%'"></div>
+                <!--<div class="swiper-slide" style="background:url('img/swiper-pc-icon.png') no-repeat center/100% 100%"></div>-->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-container mobile-swiperInMobile" style="display: none"  v-if="imgJson && imgJson.length!=0">
+            <div class="swiper-wrapper">
+                <div  v-for="(key, value) in imgJson[0].detailPhoneImgPath" class="swiper-slide" :style="'background:url('+key+') no-repeat center/100% 100%'"></div>
+                <!--<div class="swiper-slide" style="background:url('img/swiper-iphone-icon.png') no-repeat center/100% 100%"></div>-->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="footer row" style="">
+        <div class="col" style="padding: 0">
+            <span style="margin-right: 1%"><i class="icon iconfont">&#xe60d;</i> CONTACT US | 联系我们</span>
+            <div class="details">
+                与合作伙伴共同创造最大价值是金星娱乐不懈努力的目标，
+                金星与知名品牌合作,金星亦乐于携手新兴品牌共同发展。
+                期待与您共创未来！
+            </div>
+            <div style="display: inline-block;margin-right: 1%"><i class="icon iconfont">&#xe609;</i> COOPERATIVE PARTNER | 合作伙伴 <img src="img/partner-img.png" alt=""></div>
+            <span style="font-size: 12px;">COPYRIGHT © 2017 HONGTU GAME ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jqery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name:'',
+            imgJson: [],
+            query:{
+                styleId:null
+            }
+        },
+        methods:{
+            getCases:function() {
+                var that = this;
+                $.ajax({
+                    type: "POST",
+                    url:url+'web/caseDetails/findAllCaseDetailsInfo',
+                    data:JSON.stringify({
+                        uri:"/web/caseDetails/findAllCaseDetailsInfo",
+                        token:"",
+                        paramData:that.query
+                    }),
+                    contentType:'false',
+                    success:function(data){
+                        if(data.currentStatus == 0) {
+                            that.imgJson = data.currentData.data;
+                            that.$nextTick(function () {
+                                 new Swiper('.pc-swiper', {
+                                    effect: 'coverflow',
+                                    grabCursor: true,
+                                    centeredSlides: true,
+                                    slidesPerView: 'auto',
+                                    coverflowEffect: {
+                                        rotate: -50,
+                                        stretch: 110,
+                                        depth: 220,
+                                        modifier: 1,
+                                        slideShadows : true
+                                    },
+                                    loop: true,
+                                    pagination: {
+                                        el: '.swiper-pagination'
+                                    },
+                                    autoplay: {
+                                        delay: 2500,
+                                        disableOnInteraction: false
+                                    },
+                                    navigation: {
+                                        nextEl: '.swiper-button-next',
+                                        prevEl: '.swiper-button-prev'
+                                    }
+                                });
+                                new Swiper('.pc-swiperInMobile', {
+                                    effect: 'cube',
+                                    grabCursor: true,
+                                    cubeEffect: {
+                                        shadow: true,
+                                        slideShadows: true,
+                                        shadowOffset: 20,
+                                        shadowScale: 0.94
+                                    },
+                                    loop: true,
+                                    pagination: {
+                                        el: '.swiper-pagination'
+                                    },
+                                    autoplay: {
+                                        delay: 2500,
+                                        disableOnInteraction: false
+                                    }
+                                });
+
+                            })
+                        }
+
+                    }
+                })
+            }
+        },
+        created:function(){
+            var id = window.location.search.split('=')[1].split('&')[0]
+            this.name = window.location.search.split('=')[2]
+            this.query.styleId = id;
+            this.getCases()
+        },
+        mounted:function () {
+
+        }
+    })
+
+</script>
+<script src="js/detail.js"></script>
+</body>
+</html>

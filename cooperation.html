@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金星娱乐</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="./img/logo.png" alt="" class="animated wow pulse" data-wow-delay="700ms">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto nav" style="margin: 0 auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">金星首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="advantage.html">金星优势</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gameType.html">游戏品种</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">服务方案</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cases.html">成功案例</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cooperation.html">联系我们</a>
+                    </li>
+                </ul>
+                <!--<form class="form-inline my-2 my-lg-0">-->
+                    <!--<input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入关键字后回车">-->
+                <!--</form>-->
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;position: relative;overflow: hidden">
+        <video id="background_video" loop muted></video>
+        <div id="video_cover"></div>
+        <div id="overlay"></div>
+       <div class="row ">
+           <div class="col-md-12 cooperation-content" style="padding: 0">
+                <div class="row justify-content-md-center" style="margin: 0;">
+                    <div class="col-md-4 align-self-center">
+                        <h1>联系我们</h1>
+                        <div>
+                            与您共同创造最大价值是金星娱乐不懈努力的目标，金星娱乐开展的合作伙伴计划，是为满足不同客户的不同合作需求，有针对性的给予提供资源和支撑，如培训、认证、测试环境、营销和销售支撑、奖励等，确保您与我们一起实现价值。
+                        </div>
+                        <hr>
+                        <div class="center">
+                            金星与知名品牌合作，金星亦乐于携手初创品牌共同发展。<br>
+                            期待与您合作愉快，共创未来！
+                        </div>
+                    </div>
+                    <div class="col-md-4 align-self-center" style="background-color: rgba(70, 129, 120, 0.5);padding-top: 20px;border: 2px solid rgba(105, 139, 179, 0.5);border-radius: 10px;box-sizing: content-box;">
+                        <h1>您的信息</h1>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name">姓名</label>
+                                <input type="text" class="form-control" id="name" v-model="msgName">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">电子邮箱</label>
+                                <input type="email" class="form-control" id="email"  v-model="msgEmail">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone">电话</label>
+                                <input type="text" class="form-control" id="phone" v-model="msgPhone">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="qq">微信/QQ</label>
+                                <input type="text" class="form-control" id="qq" v-model="msgWeChatQQ">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="textarea">留言</label>
+                                <textarea class="form-control" id="textarea" rows="3" v-model="msgContent" style="resize: none"></textarea>
+                                <div style="text-align: center;margin-top: 20px">
+                                    <button type="button" class="btn" @click="sendMassage">提交</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <div class="footer row" style="margin-top: 113px;">
+            <div class="col" style="padding: 0;color: #fff">
+                <span style="margin-right: 1%"><i class="icon iconfont">&#xe60d;</i> CONTACT US | 联系我们</span>
+                <div class="details">
+                    与合作伙伴共同创造最大价值是金星娱乐不懈努力的目标，
+                    金星与知名品牌合作,金星亦乐于携手新兴品牌共同发展。
+                    期待与您共创未来！
+                </div>
+                <div style="display: inline-block;margin-right: 1%"><i class="icon iconfont">&#xe609;</i> COOPERATIVE PARTNER | 合作伙伴 <img src="img/partner-img.png" alt=""></div>
+                <span style="font-size: 12px;">COPYRIGHT © 2017 HONGTU GAME ALL RIGHTS RESERVED</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jqery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bideo.js"></script>
+
+<script src="js/index.js"></script>
+<script>
+    console.log(url)
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msgName:'',
+            msgEmail:'',
+            msgPhone:'',
+            msgWeChatQQ:'',
+            msgContent:''
+        },
+        methods:{
+            sendMassage:function() {
+                var that = this;
+                if(this.msgName == '') {
+                    alert('请输入姓名');
+                    return;
+                }
+                $.ajax({
+                    type: "POST",
+                    url:url+'admin/message/addMessage',
+                    data:JSON.stringify({
+                        uri:"/admin/message/addMessage",
+                        token:"",
+                        paramData:{
+                            msgName:that.msgName,
+                            msgEmail:that.msgEmail,
+                            msgPhone:that.msgPhone,
+                            msgWeChatQQ:that.msgWeChatQQ,
+                            msgContent:that.msgContent
+                        }
+                    }),
+                    contentType:'false',
+                    success:function(data){
+                        if(data.currentStatus == 0) {
+                            alert('提交成功')
+                        }
+                    }
+                })
+            }
+        },
+        created:function(){
+//            this.sendMassage()
+        }
+    })
+
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

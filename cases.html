@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金星娱乐</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="container-fluid nav-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="./img/logo.png" alt="" class="animated wow pulse" data-wow-delay="700ms">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto nav" style="margin: 0 auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">金星首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="advantage.html">金星优势</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gameType.html">游戏品种</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">服务方案</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cases.html">成功案例</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cooperation.html">联系我们</a>
+                    </li>
+                </ul>
+                <!--<form class="form-inline my-2 my-lg-0">-->
+                    <!--<input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入关键字后回车">-->
+                <!--</form>-->
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-md-center" style="margin-top: 30px">
+            <div class="col-md-12">
+                <h1 class="ad-title animated wow pulse" data-wow-delay="400ms">成功案例</h1>
+            </div>
+        </div>
+        <div class="title-type row">
+            <div class="col-md-1 col-6">
+                <button type="button" class="btn btn-style btn-outline-secondary active" @click="queryHandle()">所有样式 <i class="icon iconfont">&#xe60e;</i></button>
+            </div>
+            <div class="col-md-1 col-6">
+                <button type="button" class="btn btn-style btn-outline-secondary" @click="queryHandle('1')">热门样式 <i class="icon iconfont">&#xe60c;</i></button>
+            </div>
+            <div class="col-md-1 col-6">
+                <div class="btn-group model">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        板型布局
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('2A')">直向大小</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('2B')">横向大小</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('2C')">多面切割</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('2D')">对角线</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('2E')">无规则</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-6">
+                <div class="btn-group design">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        设计风格
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('3A')">前卫时尚</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('3B')">复古典雅</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('3C')">精致华丽</a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('3D')">简约大气</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-6">
+                <div class="btn-group color">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        颜色色系
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4A')">白色 <span style="background: #fff"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4B')">灰色 <span style="background: #919090"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4C')">黑色 <span style="background: #000"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4D')">蓝色 <span style="background: #008fe4"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4E')">绿色 <span style="background: #46c100"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4F')">黄色 <span style="background: #f1f500"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4G')">褐色 <span style="background: RGB(91, 41, 0)"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4H')">橙色 <span style="background: #ff7e00"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4L')">红色 <span style="background: #f31809"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4G')">粉红 <span style="background: RGB(255, 0, 126)"></span></a>
+                        <a class="dropdown-item btn-style" href="javascript:;" @click="queryHandle('4K')">紫色 <span style="background: #bc00ff"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row content-box">
+
+
+            <div class="col-md-3 col-12" v-for="item in casesArr">
+                <div class="item fadeInDown animated wow" data-wow-delay="400ms" >
+                    <a :href="'detail.html?id='+item.id+'&name='+item.caseNameCh" target="_blank" :data-id="item.caseNameCh">
+                        <img :src="item.caseImgPathCh" alt="" style="width: 100%">
+                        <div class="sub-box">
+                            <!--<div class="triangle-topleft">-->
+                                <!--<span>{{item.sortNo>10?item.sortNo:'0'+item.sortNo}}</span>-->
+                            <!--</div>-->
+                            <span>{{item.caseNameCh}} <span v-for="colorItem in item.detailImgColor" class="circle" :style="'background: '+getColor(colorItem)"></span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--<div class="col-md-3 col-12">-->
+                <!--<div class="item fadeInDown animated wow" data-wow-delay="400ms">-->
+                    <!--<a href="detail.html" target="_blank" data-id="A01">-->
+                        <!--<img src="img/item-img1.jpg" alt="" style="width: 100%">-->
+                        <!--<div class="sub-box">-->
+                            <!--<div class="triangle-topleft"><span>01</span></div>-->
+                            <!--<span>英雄联盟 <span class="circle" style="background: red"></span><span class="circle" style="background: red"></span><span class="circle" style="background: red"></span></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="footer row" style="">
+            <div class="col" style="padding: 0">
+                <span style="margin-right: 1%"><i class="icon iconfont">&#xe60d;</i> CONTACT US | 联系我们</span>
+                <div class="details">
+                    与合作伙伴共同创造最大价值是金星娱乐不懈努力的目标，
+                    金星与知名品牌合作,金星亦乐于携手新兴品牌共同发展。
+                    期待与您共创未来！
+                </div>
+                <div style="display: inline-block;margin-right: 1%"><i class="icon iconfont">&#xe609;</i> COOPERATIVE PARTNER | 合作伙伴 <img src="img/partner-img.png" alt=""></div>
+                <span style="font-size: 12px;">COPYRIGHT © 2017 HONGTU GAME ALL RIGHTS RESERVED</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jqery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="js/index.js"></script>
+<script>
+    console.log(url)
+    var app = new Vue({
+        el: '#app',
+        data: {
+            casesArr: [],
+            query:{
+                caseTypeId:null,
+                styleCode:null
+            }
+        },
+        methods:{
+            getColor:function (color) {
+                switch(color)
+                {
+                    case '白色':
+                        return '#fff'
+                        break;
+                    case '灰色':
+                        return '#919090'
+                        break;
+                    case '黑色':
+                        return '#000'
+                        break;
+                    case '蓝色':
+                        return '#008fe4'
+                        break;
+                    case '绿色':
+                        return '#46c100'
+                        break;
+                    case '黄色':
+                        return '#f1f500'
+                        break;
+                    case '褐色':
+                        return 'RGB(91, 41, 0)'
+                        break;
+                    case '橙色':
+                        return '#ff7e00'
+                        break;
+                    case '红色':
+                        return '#f31809'
+                        break;
+                    case '粉红':
+                        return 'RGB(255, 0, 126)'
+                        break;
+                    case '紫色':
+                        return '#bc00ff'
+                        break;
+                }
+            },
+            queryHandle:function (query) {
+                if(query!=undefined) {
+                    this.query.caseTypeId = query.substring(0,1);
+                    this.query.styleCode = query.length==1? null: query
+                }else{
+                    this.query.caseTypeId = null;
+                    this.query.styleCode = null
+                }
+                this.getCases()
+            },
+            getCases:function() {
+                var that = this;
+                $.ajax({
+                    type: "POST",
+                    url:url+'web/successCase/findAllSuccessCaseInfo',
+                    data:JSON.stringify({
+                        uri:"/web/successCase/findAllSuccessCaseInfo",
+                        token:"",
+                        paramData:that.query
+                    }),
+                    contentType:'false',
+                    success:function(data){
+                        if(data.currentStatus == 0) {
+                            that.casesArr = data.currentData.data;
+                            console.log(that.casesArr)
+                        }
+
+                    }
+                })
+            }
+        },
+        created:function(){
+            this.getCases()
+        }
+    })
+
+</script>
+</body>
+</html>
